@@ -25,30 +25,31 @@ public class Median_of_Two_Sorted_Arrays_4 {
         int[] sortNums = new int[(nums1.length + nums2.length) / 2 + 1];
         int p1 = 0;
         int p2 = 0;
-        for(int i = 0; i < sortNums.length; i++){
-            if(p1 == nums1.length){
+        for (int i = 0; i < sortNums.length; i++) {
+            if (p1 == nums1.length) {
                 sortNums[i] = nums2[p2];
                 p2++;
                 continue;
             }
-            if(p2 == nums2.length){
+            if (p2 == nums2.length) {
                 sortNums[i] = nums1[p1];
                 p1++;
                 continue;
             }
-            if(nums1[p1] < nums2[p2]){
+            if (nums1[p1] < nums2[p2]) {
                 sortNums[i] = nums1[p1];
                 p1++;
-            }else{
+            } else {
                 sortNums[i] = nums2[p2];
                 p2++;
             }
         }
         double result = 0.0;
-        if(ifOdd){
+        if (ifOdd) {
             result = sortNums[sortNums.length - 1];
-        }else{
+        } else {
             result = 1.0 * (sortNums[sortNums.length - 1] + sortNums[sortNums.length - 2]) / 2;
         }
         return result;
+    }
 }
