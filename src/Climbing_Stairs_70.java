@@ -34,18 +34,7 @@ public class Climbing_Stairs_70 {
         if(memo[n] != 0){
             return memo[n];
         }
-        int steps = 0;
-        if(memo[n - 1] != 0){
-            steps += memo[n - 1];
-        }else{
-            steps += recuClimb(n - 1, memo);
-        }
-        if(memo[n - 2] != 0){
-            steps += memo[n - 2];
-        }else{
-            steps += recuClimb(n - 2, memo);
-        }
-        memo[n] = steps;
-        return steps;
+        memo[n] = recuClimb(n - 1, memo) + recuClimb(n - 2, memo);
+        return memo[n];
     }
 }
