@@ -17,13 +17,6 @@
  * Note:
  * Bonus points if you could solve it both recursively and iteratively.
  */
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode(int x) { val = x; }
-}
-
 public class Symmetric_Tree_101 {
     public boolean isSymmetric(TreeNode root) {
         if(root == null || (root.left == null && root.right == null)) return true;
